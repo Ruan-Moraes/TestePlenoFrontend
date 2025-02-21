@@ -1,8 +1,9 @@
+import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
 import { yupResolver } from '@hookform/resolvers/yup';
-import { authValidation } from '../schema/AuthValidationSchema';
+import { authValidation } from '../schemas/AuthValidationSchema';
 
 import Main from '../templates/Main';
 
@@ -21,21 +22,25 @@ const Login = () => {
     resolver: yupResolver(authValidation),
   });
 
-  const onSubmit = async (data: { email: string; password: string }) => {
-    const { email, password } = data;
+  const onSubmit = useCallback(
+    async (data: { email: string; password: string }) => {
+      const { email, password } = data;
 
-    const authResponse = await auth(email, password);
+      const authResponse = await auth(email, password);
 
-    if (authResponse) {
-      navigate('/dashboard');
-    }
+      if (authResponse) {
+        navigate('/home');
+      }
 
-    if (!authResponse) {
-      alert('E-mail ou senha incorretos');
-    }
-  };
+      if (!authResponse) {
+        alert('E-mail ou senha incorretos');
+      }
+    },
+    []
+  );
 
-  const auth = async (email: string, password: string) => {
+  // Preferi deixa a função aqui, poderia criar uma pasta utils mas acho necessário
+  const auth = useCallback(async (email: string, password: string) => {
     try {
       const response = await fetch('http://localhost:3000/login', {
         method: 'GET',
@@ -57,7 +62,7 @@ const Login = () => {
     } catch (error) {
       console.error(error);
     }
-  };
+  }, []);
 
   return (
     <Main>

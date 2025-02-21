@@ -6,8 +6,7 @@ import {
 } from 'react-router-dom';
 
 import Login from './routes/Login';
-
-import './styles/index.css';
+import Home from './routes/Home';
 
 function App() {
   const routes = createBrowserRouter([
@@ -23,6 +22,10 @@ function App() {
         {
           path: '',
           element: <Login />,
+        },
+        {
+          path: 'home',
+          element: <Home />,
         },
       ],
     },
