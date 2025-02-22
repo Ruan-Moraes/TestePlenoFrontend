@@ -1,3 +1,19 @@
+# Como testar o projeto
+
+1. Clone o repositório
+2. Instale as dependências com `yarn`
+3. Inicie o json-server com `yarn server`
+4. Inicie o projeto com `yarn dev`
+
+5. Faça autenticação com o email `teste@teste.com` e senha `12345`
+
+# Observações
+
+- Não apliquei o layout do figma pois o link está offline
+- Provalvemente o código não é dos melhores e possivelmente existem bugs
+- No futuro quem saber poderia criar um crud com autenticação utilizando o json-server como "API"
+- As libs adicionadas são:
+
 ## INSTRUÇÕES PARA O TESTE TÉCNICO
 
 - Crie um fork deste projeto (https://github.com/CAPYS-IT/TestePlenoFrontend).
