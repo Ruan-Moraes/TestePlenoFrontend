@@ -1,9 +1,11 @@
-import { useCallback } from 'react';
+import { useCallback, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
 import { yupResolver } from '@hookform/resolvers/yup';
 import { authValidation } from '../schemas/AuthValidationSchema';
+
+import { AuthContext } from '../components/context/AuthContext';
 
 import Main from '../templates/Main';
 
@@ -12,6 +14,8 @@ import InputField from '../components/inputs/InputField';
 import Button from '../components/buttons/Button';
 
 const Login = () => {
+  const { isLogged, login, logout } = useContext(AuthContext);
+
   const navigate = useNavigate();
 
   const {
@@ -22,6 +26,16 @@ const Login = () => {
     resolver: yupResolver(authValidation),
   });
 
+  useEffect(() => {
+    if (isLogged) {
+      navigate('/home');
+    }
+  }, [isLogged, navigate]);
+
+  useEffect(() => {
+    logout();
+  }, []);
+
   const onSubmit = useCallback(
     async (data: { email: string; password: string }) => {
       const { email, password } = data;
@@ -29,6 +43,8 @@ const Login = () => {
       const authResponse = await auth(email, password);
 
       if (authResponse) {
+        login();
+
         navigate('/home');
       }
 

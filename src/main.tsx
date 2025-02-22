@@ -4,8 +4,12 @@ import App from './App.tsx';
 
 import './styles/index.css';
 
+import { AuthProvider } from './components/context/AuthContext.tsx';
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <App />
+    <AuthProvider>
+      <App />
+    </AuthProvider>
   </React.StrictMode>
 );

@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -5,10 +6,14 @@ import {
   Outlet,
 } from 'react-router-dom';
 
+import { AuthContext } from './components/context/AuthContext';
+
 import Login from './routes/Login';
 import Home from './routes/Home';
 
 function App() {
+  const { isLogged } = useContext(AuthContext);
+
   const routes = createBrowserRouter([
     {
       path: '/',
@@ -25,7 +30,7 @@ function App() {
         },
         {
           path: 'home',
-          element: <Home />,
+          element: isLogged ? <Home /> : <Login />,
         },
       ],
     },
