@@ -1,6 +1,10 @@
+import { useNavigate } from 'react-router-dom';
+
 import Button from '../buttons/Button';
 
 const SignUpContainer = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-col gap-4 mt-4">
       <div>
@@ -12,7 +16,8 @@ const SignUpContainer = () => {
         <Button
           type="button"
           text="Cadastre-se"
-          className="bg-grey-1 border-grey-1"
+          className="bg-grey-1 border-grey-1 w-full"
+          onClick={() => navigate('/register')}
         />
       </div>
     </div>

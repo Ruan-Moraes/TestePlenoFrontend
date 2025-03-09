@@ -27,8 +27,6 @@ const Login = () => {
       <Logo />
       <FormContainer
         onSubmit={handleSubmit((e) => {
-          console.log('Login');
-
           console.log(e);
         })}
       >
@@ -50,7 +48,6 @@ const Login = () => {
           errors={errors}
         />
         <Button type="submit" text="Entrar" />
-
         <SignUpContainer />
       </FormContainer>
     </Main>
