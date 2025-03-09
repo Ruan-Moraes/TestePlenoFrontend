@@ -12,7 +12,7 @@
 - Não apliquei o layout do figma pois o link está offline
 - Provalvemente o código não é dos melhores e possivelmente existem bugs
 - No futuro quem saber poderia criar um crud com autenticação utilizando o json-server como "API"
-- As libs adicionadas são:
+- As libs adicionadas são: tailwind, react-router-dom, react-hook-form, yup, json-server
 
 ## INSTRUÇÕES PARA O TESTE TÉCNICO
 
