@@ -1,7 +1,7 @@
 import Main from '../templates/Main';
 
-const Home = () => {
+const Register = () => {
   return <Main></Main>;
 };
 
-export default Home;
+export default Register;

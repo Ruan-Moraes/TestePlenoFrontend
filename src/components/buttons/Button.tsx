@@ -1,14 +1,15 @@
 type ButtonProps = {
+  type: 'submit' | 'button';
   className?: string;
   text: string;
 };
 
-const Button = ({ className, text }: ButtonProps) => {
+const Button = ({ type, className, text }: ButtonProps) => {
   return (
     <button
-      type="submit"
-      className={`w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-sm shadow-md transition ${
-        className && className
+      type={type}
+      className={`h-12 w-full px-[1.375rem] text-white font-medium text-xs rounded-sm border  ${
+        className ? className : 'bg-primary border-primary'
       }`}
     >
       {text}

@@ -6,7 +6,7 @@ type MainProps = {
 const Main = ({ className, children }: MainProps) => {
   return (
     <>
-      <main className={className ? `p-4 w-full ${className}` : 'p-4 w-full'}>
+      <main className={className ? `p-3 w-full ${className}` : 'p-3 w-full'}>
         {children}
       </main>
     </>

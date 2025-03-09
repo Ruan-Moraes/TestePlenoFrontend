@@ -1,19 +1,16 @@
-import { useContext } from 'react';
 import {
   createBrowserRouter,
   RouterProvider,
   ScrollRestoration,
   Outlet,
+  Navigate,
 } from 'react-router-dom';
 
-import { AuthContext } from './components/context/AuthContext';
-
 import Login from './routes/Login';
+import Register from './routes/Register';
 import Home from './routes/Home';
 
 function App() {
-  const { isLogged } = useContext(AuthContext);
-
   const routes = createBrowserRouter([
     {
       path: '/',
@@ -25,12 +22,20 @@ function App() {
       ),
       children: [
         {
-          path: '',
+          index: true,
+          element: <Navigate to="/login" replace />,
+        },
+        {
+          path: 'login',
           element: <Login />,
         },
         {
+          path: 'register',
+          element: <Register />,
+        },
+        {
           path: 'home',
-          element: isLogged ? <Home /> : <Login />,
+          element: <Home />,
         },
       ],
     },
