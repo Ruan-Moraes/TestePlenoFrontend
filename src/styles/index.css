@@ -6,6 +6,7 @@
   --color-primary: #8b1d07;
   --color-primary-Disable: #8b3d07;
 
+  --color-blue-5: #01121f;
   --color-blue-4: #021a30;
 
   --color-grey-2: #343b41;
@@ -15,9 +16,4 @@
   --default-font-family: 'Inter', sans-serif;
 
   --shadow-drop: 0.25rem 2rem -0.5rem #00000040;
-}
-
-body {
-  /* min-height: 100vh; */
-  background-color: #01121f;
 }
