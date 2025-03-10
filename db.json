@@ -1,143 +1,22 @@
 {
-  "livros": [
+  "users": [
     {
-      "id": 1,
-      "nome": "Dracula Dark Edition",
-      "star": 3.5,
-      "data_publicacao": "2018-10-24",
-      "editora": "Darkside",
-      "autor": "Bram Stoker",
-      "fl_favorito": true
+      "id": "1",
+      "name": "Teste Capys",
+      "email": "teste@capys.com.br",
+      "password": "12345",
+      "bio": "Teste",
+      "contact": "123456789",
+      "role": "Desenvolvedor Frontend"
     },
     {
-      "id": 2,
-      "nome": "A Chegada do Terceiro Reich",
-      "star": 4,
-      "data_publicacao": "2017-02-20",
-      "editora": "Critica",
-      "autor": "Richard J. Evans",
-      "fl_favorito": true
-    },
-    {
-      "id": 3,
-      "nome": "Harry Potter e a Pedra Filosofal",
-      "star": 4,
-      "data_publicacao": "2017-08-19",
-      "editora": "Rocco",
-      "autor": "J.K. Rowling",
-      "fl_favorito": true
-    },
-    {
-      "id": 4,
-      "nome": "A Biblioteca da Meia-Noite",
-      "star": 4.5,
-      "data_publicacao": "2021-09-20",
-      "editora": "Bertrand",
-      "autor": "Matt Haig",
-      "fl_favorito": true
-    },
-    {
-      "id": 5,
-      "nome": "As Crônicas de Nárnia - Coleção de Luxo: O Leão, a Feiticeira e o Guarda-roupa",
-      "star": 5,
-      "data_publicacao": "2023-01-15",
-      "editora": "HarperCollins",
-      "autor": "Clive Staples Lewis",
-      "fl_favorito": false
-    },
-    {
-      "id": 6,
-      "nome": "Box Trilogia O Senhor dos Anéis",
-      "star": 5,
-      "data_publicacao": "2019-10-25",
-      "editora": "HarperCollins",
-      "autor": "J. R. R. Tolkien",
-      "fl_favorito": false
-    },
-    {
-      "id": 7,
-      "nome": "A psicologia financeira: lições atemporais sobre fortuna, ganância e felicidade",
-      "star": 5,
-      "data_publicacao": "2021-03-15",
-      "editora": "HarperCollins",
-      "autor": "Morgan Housel",
-      "fl_favorito": false
-    },
-    {
-      "id": 8,
-      "nome": "A princesa salva a si mesma neste livro",
-      "star": 4.5,
-      "data_publicacao": "2017-10-30",
-      "editora": "Leya",
-      "autor": "Amanda Lovelace",
-      "fl_favorito": false
-    },
-    {
-      "id": 9,
-      "nome": "Antes que o café esfrie",
-      "star": 4.5,
-      "data_publicacao": "2022-04-15",
-      "editora": "Valentina",
-      "autor": "Toshikazu Kawaguchi",
-      "fl_favorito": false
-    },
-    {
-      "id": 10,
-      "nome": "Hamlet",
-      "star": 5,
-      "data_publicacao": "2021-04-26",
-      "editora": "Principis",
-      "autor": "William Shakespeare",
-      "fl_favorito": false
-    },
-    {
-      "id": 11,
-      "nome": "Cartas de um diabo a seu aprendiz",
-      "star": 5,
-      "data_publicacao": "2017-10-18",
-      "editora": "Thomas Nelson Brasil",
-      "autor": "C.S. Lewis",
-      "fl_favorito": false
-    },
-    {
-      "id": 12,
-      "nome": "O menino, a toupeira, a raposa e o cavalo",
-      "star": 5,
-      "data_publicacao": "2020-12-10",
-      "editora": "Editora Sextante",
-      "autor": "Charlie Mackesy",
-      "fl_favorito": false
-    },
-    {
-      "id": 13,
-      "nome": "Todo meu caminho diante de mim",
-      "star": 5,
-      "data_publicacao": "2020-08-14",
-      "editora": "Thomas Nelson Brasil",
-      "autor": "Clive Staples Lewis",
-      "fl_favorito": false
-    },
-    {
-      "id": 14,
-      "nome": "Quem pensa enriquece - o legado: O legado",
-      "star": 5,
-      "data_publicacao": "2018-05-28",
-      "editora": "Citadel",
-      "autor": "Napoleon Hill",
-      "fl_favorito": false
-    },
-    {
-      "id": 15,
-      "nome": "Melhor do que nos filmes",
-      "star": 5,
-      "data_publicacao": "2023-04-06",
-      "editora": "Intrínseca",
-      "autor": "Lynn Painter",
-      "fl_favorito": false
+      "id": "2daf",
+      "name": "Ruan",
+      "email": "ruan@gmail.com",
+      "password": "12345",
+      "bio": "Desenvolvedor",
+      "contact": "31 99311 2958",
+      "role": "Desenvolvedor Fullstack"
     }
-  ],
-  "login": {
-    "email": "teste@teste.com",
-    "password": "12345"
-  }
+  ]
 }

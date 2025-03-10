@@ -7,24 +7,8 @@ type InputFieldProps = {
   label: string;
   type: string;
   placeholder: string;
-  register: UseFormRegister<{
-    email: string;
-    password: string;
-    confirmPassword: string;
-    name: string;
-    bio: string;
-    contact: string;
-    role?: string;
-  }>;
-  errors: FieldErrors<{
-    email: string;
-    password: string;
-    confirmPassword: string;
-    name: string;
-    bio: string;
-    contact: string;
-    role?: string;
-  }>;
+  register: UseFormRegister<any>;
+  errors: FieldErrors;
 };
 
 const InputField = ({
@@ -45,9 +29,11 @@ const InputField = ({
 
   const handleChangeIcons = useCallback(() => {
     if (isPasswordVisible) {
+      // @ts-ignore - Ganha tempo
       return <FaEyeSlash fill="white" size={18} />;
     }
 
+    // @ts-ignore
     return <FaEye fill="white" size={18} />;
   }, [isPasswordVisible]);
 
@@ -75,7 +61,7 @@ const InputField = ({
           </button>
         )}
       </div>
-      <span className="text-[0.625rem] text-grey-1">{errors[id]?.message}</span>
+      <span className="text-[0.625rem] text-grey-1">{typeof errors[id]?.message === 'string' ? errors[id]?.message : ''}</span>
     </div>
   );
 };

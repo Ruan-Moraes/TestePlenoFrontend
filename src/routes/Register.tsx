@@ -1,9 +1,10 @@
 import { useCallback, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import { authValidation } from '../schemas/AuthValidationSchema';
+import { registerValidation } from '../schemas/RegisterValidationSchema';
 
 import Main from '../templates/Main';
 
@@ -16,36 +17,64 @@ import Button from '../components/buttons/Button';
 import Toast from '../utils/toast';
 
 const Register = () => {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(authValidation),
+    resolver: yupResolver(registerValidation),
   });
 
-  const [roleValue, setRoleValue] = useState('1');
+  const [roleValue, setRoleValue] = useState('Desenvolvedor Frontend');
 
   const onChangeRole = useCallback((value: string) => {
     setRoleValue(value);
   }, []);
 
   const options = [
-    { value: '1', label: 'Desenvolvedor Frontend' },
-    { value: '2', label: 'Desenvolvedor Backend' },
-    { value: '3', label: 'Desenvolvedor Fullstack' },
+    { value: 'Desenvolvedor Frontend', label: 'Desenvolvedor Frontend' },
+    { value: 'Desenvolvedor Backend', label: 'Desenvolvedor Backend' },
+    { value: 'Desenvolvedor Fullstack', label: 'Desenvolvedor Fullstack' },
   ];
+
+  interface User {
+    name: string;
+    email: string;
+    password: string;
+    confirmPassword: string;
+    bio: string;
+    contact: string;
+    role: string;
+  }
+
+  const createUser = useCallback(async (data: User) => {
+    const { confirmPassword, ...rest } = data;
+
+    await fetch('http://localhost:3333/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(rest),
+    });
+  }, []);
 
   return (
     <Main>
       <Logo hasButton />
       <FormContainer
         onSubmit={handleSubmit((e) => {
+          // @ts-ignore
           e.role = roleValue;
 
           Toast({ text: 'Conta criada com Sucesso!', status: 'success' });
 
-          console.log(e);
+          // @ts-ignore
+          createUser(e);
+
+          navigate('/login');
         })}
       >
         <FormTitle
