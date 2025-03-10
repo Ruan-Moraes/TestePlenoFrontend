@@ -1,8 +1,15 @@
-# Como testar o projeto
+## Como testar o projeto
 
 1. Clone o repositório
 2. Instale as dependências com `yarn`
-3. Inicie o projeto com `yarn dev`
+3. Inicie o json-server com `yarn server`
+4. Inicie o projeto com `yarn dev`
+5. Acesse o projeto em `http://localhost:5174/`
+
+## Observações
+
+- Dei o @ts-ignore em algumas partes do código para não dar erro de tipagem. Não queria perder muito tempo com isso.
+- Fiz um sistema bem simples de autenticação, onde você pode logar com qualquer email e senha e cadastrar um novo usuário com json-server.
 
 ## INSTRUÇÕES PARA O TESTE TÉCNICO
 
